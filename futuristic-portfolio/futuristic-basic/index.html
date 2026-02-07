@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ANJU MOHAN V - Futuristic Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0a0a0f 0%, #1a1a2e 50%, #16213e 100%);
+            color: #ffffff;
+            min-height: 100vh;
+            line-height: 1.6;
+            background-attachment: fixed;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Futuristic Header */
+        header {
+            text-align: center;
+            padding: 100px 0 60px;
+            position: relative;
+        }
+        
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #00eeff, #bf00ff, #00eeff);
+            animation: glow 3s ease-in-out infinite alternate;
+        }
+        
+        @keyframes glow {
+            0% { box-shadow: 0 0 10px #00eeff; }
+            100% { box-shadow: 0 0 20px #bf00ff; }
+        }
+        
+        .name {
+            font-size: 4rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #00eeff, #bf00ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 20px;
+            text-shadow: 0 0 20px rgba(0, 238, 255, 0.5);
+        }
+        
+        .title {
+            font-size: 1.8rem;
+            color: #a0a0b0;
+            margin-bottom: 30px;
+            letter-spacing: 2px;
+        }
+        
+        .contact-bar {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin: 30px 0;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            border: 1px solid rgba(0, 238, 255, 0.3);
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .contact-item a {
+            color: #00eeff;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-item a:hover {
+            color: #bf00ff;
+            text-shadow: 0 0 10px rgba(191, 0, 255, 0.7);
+        }
+        
+        /* Section Styling */
+        section {
+            padding: 80px 0;
+            position: relative;
+        }
+        
+        section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(90deg, #00eeff, #bf00ff);
+            border-radius: 3px;
+        }
+        
+        h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 60px;
+            color: #ffffff;
+            position: relative;
+        }
+        
+        h2 span {
+            background: linear-gradient(135deg, #00eeff, #bf00ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        /* Card Design */
+        .card {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(0, 238, 255, 0.2);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 20px 0;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(191, 0, 255, 0.4);
+            box-shadow: 0 10px 30px rgba(0, 238, 255, 0.2);
+        }
+        
+        /* Skills Grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+        }
+        
+        .skill-category h3 {
+            color: #00eeff;
+            margin-bottom: 20px;
+            font-size: 1.4rem;
+            border-bottom: 2px solid rgba(0, 238, 255, 0.3);
+            padding-bottom: 10px;
+        }
+        
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        
+        .skill-tag {
+            background: linear-gradient(135deg, rgba(0, 238, 255, 0.2), rgba(191, 0, 255, 0.2));
+            border: 1px solid rgba(0, 238, 255, 0.3);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+        
+        .skill-tag:hover {
+            transform: scale(1.05);
+            border-color: #bf00ff;
+            box-shadow: 0 0 15px rgba(191, 0, 255, 0.4);
+        }
+        
+        /* Projects Grid */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .project-card {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(0, 238, 255, 0.2);
+            border-radius: 15px;
+            padding: 25px;
+            transition: all 0.3s ease;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(191, 0, 255, 0.4);
+            box-shadow: 0 15px 35px rgba(0, 238, 255, 0.3);
+        }
+        
+        .project-title {
+            color: #00eeff;
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+        }
+        
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 15px 0;
+        }
+        
+        .tech-tag {
+            background: rgba(191, 0, 255, 0.2);
+            border: 1px solid rgba(191, 0, 255, 0.4);
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+        }
+        
+        /* Timeline */
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(to bottom, #00eeff, #bf00ff);
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .timeline-item {
+            position: relative;
+            width: 50%;
+            padding: 20px;
+            margin-bottom: 40px;
+        }
+        
+        .timeline-item:nth-child(odd) {
+            left: 0;
+        }
+        
+        .timeline-item:nth-child(even) {
+            left: 50%;
+        }
+        
+        .timeline-content {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(0, 238, 255, 0.2);
+            border-radius: 10px;
+            padding: 20px;
+        }
+        
+        .timeline-marker {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: linear-gradient(135deg, #00eeff, #bf00ff);
+            border-radius: 50%;
+            top: 25px;
+            border: 3px solid #0a0a0f;
+            box-shadow: 0 0 15px rgba(0, 238, 255, 0.5);
+        }
+        
+        .timeline-item:nth-child(odd) .timeline-marker {
+            right: -13px;
+        }
+        
+        .timeline-item:nth-child(even) .timeline-marker {
+            left: -13px;
+        }
+        
+        .period {
+            color: #bf00ff;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 50px 0;
+            background: rgba(10, 10, 15, 0.8);
+            border-top: 1px solid rgba(0, 238, 255, 0.3);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .name {
+                font-size: 2.5rem;
+            }
+            
+            .title {
+                font-size: 1.2rem;
+            }
+            
+            .contact-bar {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .timeline::before {
+                left: 31px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                left: 0 !important;
+            }
+            
+            .timeline-marker {
+                left: 21px !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <h1 class="name">ANJU MOHAN V</h1>
+            <div class="title">FULL STACK PYTHON DEVELOPER</div>
+            <div class="contact-bar">
+                <div class="contact-item">
+                    <strong>📞</strong>
+                    <span>9605835491</span>
+                </div>
+                <div class="contact-item">
+                    <strong>✉️</strong>
+                    <a href="mailto:anjulechu199@gmail.com">anjulechu199@gmail.com</a>
+                </div>
+                <div class="contact-item">
+                    <strong>💼</strong>
+                    <a href="https://www.linkedin.com/in/anju-mohan-v-ab2a53279" target="_blank">LinkedIn Profile</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Career Objectives -->
+    <section>
+        <div class="container">
+            <h2><span>CAREER</span> OBJECTIVES</h2>
+            <div class="card">
+                <p>As a motivated and enthusiastic fresher in Software Development. I aim to apply my technical skills and passion for learning in a dynamic team. I am eager to contribute to meaningful projects, embrace new challenges, and continuously grow my expertise in Software Development to support company goals and career advancement.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section>
+        <div class="container">
+            <h2><span>TECHNICAL</span> SKILLS</h2>
+            <div class="skills-grid">
+                <div class="card skill-category">
+                    <h3>Front-End Technologies</h3>
+                    <div class="skills-list">
+                        <span class="skill-tag">HTML</span>
+                        <span class="skill-tag">CSS</span>
+                        <span class="skill-tag">Bootstrap</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">React</span>
+                    </div>
+                </div>
+                <div class="card skill-category">
+                    <h3>Back-End Technologies</h3>
+                    <div class="skills-list">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">Django</span>
+                        <span class="skill-tag">MySQL</span>
+                    </div>
+                </div>
+                <div class="card skill-category">
+                    <h3>Development Tools</h3>
+                    <div class="skills-list">
+                        <span class="skill-tag">Git</span>
+                        <span class="skill-tag">Sublime Text</span>
+                        <span class="skill-tag">VS Code</span>
+                    </div>
+                </div>
+                <div class="card skill-category">
+                    <h3>Soft Skills</h3>
+                    <div class="skills-list">
+                        <span class="skill-tag">Teamwork</span>
+                        <span class="skill-tag">Problem Solving</span>
+                        <span class="skill-tag">Adaptability</span>
+                        <span class="skill-tag">Time Management</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section>
+        <div class="container">
+            <h2><span>FEATURED</span> PROJECTS</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3 class="project-title">OTT Streaming Platform</h3>
+                    <p>Create a Full-stack OTT Streaming Platform where users can browse and watch movies, and manage their accounts. Included an admin panel for managing content, users, and generating reports.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">Django</span>
+                        <span class="tech-tag">MySQL</span>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <h3 class="project-title">Medical Store Management Site</h3>
+                    <p>The Medical Store Management Site lets managers manage inventory by adding, editing, viewing and deleting up to five medicines. Users can sign up, log in and search for medicines.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">JavaScript</span>
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Django</span>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <h3 class="project-title">Daily Water Intake Site</h3>
+                    <p>The Daily Water Intake Site helps users track their water consumption, view history and compare intake between dates. Users can sign up, log in and securely log out.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">HTML</span>
+                        <span class="tech-tag">CSS</span>
+                        <span class="tech-tag">JavaScript</span>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <h3 class="project-title">JavaScript Calculator</h3>
+                    <p>A simple Calculator made with JavaScript for functionality and CSS for styling. It lets users perform basic calculations with a clean design.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">HTML</span>
+                        <span class="tech-tag">CSS</span>
+                        <span class="tech-tag">JavaScript</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section>
+        <div class="container">
+            <h2><span>WORK</span> EXPERIENCE</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="period">Apr 2025 - Dec 2025</div>
+                        <h3 style="color: #00eeff; margin-bottom: 10px;">ASD Consultant</h3>
+                        <h4 style="color: #bf00ff; margin-bottom: 15px;">RM India</h4>
+                        <p>Handling high volume data and delivering SLAs. Management Reporting. Daily updating and investigating Customers and suppliers daily targets to make sure that there is no miss in the SLAs.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="period">May 2024 - Dec 2024</div>
+                        <h3 style="color: #00eeff; margin-bottom: 10px;">Full Stack Developer Intern</h3>
+                        <h4 style="color: #bf00ff; margin-bottom: 15px;">MASHUPSTACK</h4>
+                        <p>Designed and developed web applications using modern web technologies. Collaborated with cross-functional teams to deliver user-friendly and efficient solutions. Worked extensively with Python, Django, MySQL, React and Bootstrap to build scalable projects.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section>
+        <div class="container">
+            <h2><span>EDUCATIONAL</span> BACKGROUND</h2>
+            <div class="card">
+                <h3 style="color: #00eeff; margin-bottom: 20px;">Diploma in Computer Engineering</h3>
+                <p><strong>GWPTC, Kaimanam</strong> (2019 - 2022)</p>
+            </div>
+            <div class="card">
+                <h3 style="color: #00eeff; margin-bottom: 20px;">BSC Physics</h3>
+                <p><strong>NSS College For Women, Neeramankara</strong> (2015 - 2017)</p>
+            </div>
+            <div class="card">
+                <h3 style="color: #00eeff; margin-bottom: 20px;">Higher Secondary Education</h3>
+                <p><strong>BNV VHSS Thiruvallom</strong> (2015) - Computer Science</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>© 2026 ANJU MOHAN V. All rights reserved.</p>
+            <p style="color: #a0a0b0; margin-top: 10px;">Full Stack Python Developer</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,10 @@
+<!-- Placeholder SVG for project images -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200">
+  <rect width="400" height="200" fill="#0a0a0f"/>
+  <text x="200" y="100" text-anchor="middle" dominant-baseline="middle" fill="#00eeff" font-family="Arial" font-size="24">
+    Project Image
+  </text>
+  <text x="200" y="130" text-anchor="middle" dominant-baseline="middle" fill="#a0a0b0" font-family="Arial" font-size="16">
+    Placeholder
+  </text>
+</svg>
